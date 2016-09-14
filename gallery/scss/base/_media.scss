@@ -1,0 +1,111 @@
+@media(max-width:1040px){
+
+input[type="search"]{
+  width: calc(70% - 120px);
+
+
+}
+.video{
+  width: 410px;
+  height: 305px;
+}
+}
+
+
+@media(max-width:768px){
+
+#overlay img {
+/*	width: 50%;*/
+  margin-top: calc(15% + 30px);
+}
+.arrows{
+  margin-top: calc(28% + 30px);
+}
+.leftArrow{
+margin-left: -25%;
+}
+.rightArrow{
+  margin-right: -25%;
+}
+input[type="search"]{
+  width: calc(70% - 120px);
+
+}
+
+.video{
+  width: 410px;
+  height: 305px;
+}
+
+
+}
+/*iPhone 6 Plus*/
+@media (max-width:414px){
+  input[type="search"]{
+    width: calc(70% - 80px);
+  }
+}
+
+@media(max-width:360px){
+	#overlay img {
+/*	width:70%;*/
+  margin-top: calc(65% + 30px);
+}
+.arrows{
+  margin-top: calc(82% + 30px);
+
+}
+#leftArrow{
+  height: 40px;
+  width: 40px;
+  margin-left: -20%;
+}
+#rightArrow{
+  height: 40px;
+  width: 40px;
+  margin-right: -20%;
+}
+#imageGallery .layout {
+	padding: 5px;
+	margin: 3px;
+}
+.galleryDiv{
+  padding-top: 20px;
+}
+input[type="search"]{
+  width: calc(40% + 90px);
+}
+
+#overlay p{
+  width: 70%;
+}
+.video{
+  width:220px;
+  height:200px;
+  margin-top: calc(62% + 30px);
+}
+}
+@media(max-width: 320px){
+
+#overlay img{
+  margin-top: calc(65% + 30px);
+}
+.arrows{
+  margin-top: calc(82% + 30px);
+}
+#leftArrow{
+  height: 40px;
+  width: 40px;
+  margin-left: -21%;
+}
+#rightArrow{
+  height: 40px;
+  width: 40px;
+  margin-right: -21%;
+}
+.video{
+  width:220px;
+  height:200px;
+  margin-top: calc(58% + 30px);
+}
+}

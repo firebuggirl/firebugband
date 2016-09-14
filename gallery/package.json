@@ -1,0 +1,19 @@
+{
+  "name": "lightgallery",
+  "version": "1.0.0",
+  "description": "Responsive Light Gallery with search functionality and video support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firebuggirl/lightgallery.git"
+  },
+  "author": "Juliette Tworsey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firebuggirl/lightgallery/issues"
+  },
+  "homepage": "https://github.com/firebuggirl/lightgallery#readme"
+}
