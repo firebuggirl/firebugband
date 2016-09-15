@@ -1,64 +1,34 @@
-/* Hide toggle on tablets and larger screens as page loads*/
-$(document).ready(function(){
-  if(window.innerWidth >= 750){
-  	$('#toggle').hide();
-    $('.icon').hide();
-    $('#emptyDiv').hide();
-    $('.title').hide();
-      $('#firebugNav').show();
-  }
-});
-// Hide nav by default in mobile view
-$(document).ready(function(){
-  if(window.innerWidth <= 750){
-  	$('.main-nav ul li').hide();
-      $('#emptyDiv').show();
-      $('.title').show();
-      $('#firebugNav').hide();
-
-
-  }
+$(".animsition").animsition({
+  //inClass: 'fade-in-right-lg',
+  inClass: 'fade-in-up-lg',
+  //outClass: 'fade-out-right-lg',
+  outClass: 'fade-out-up-lg',
+  linkElement: 'header a',
+  inDuration: 1000,
+  outDuration: 500
 });
 
-/* Hide/show nav bar in mobile view */
-$(document).ready(function () {
-
-$('#toggle').click(function () {
-
- $('.main-nav ul li').toggle("slow");
-
- $('#toggle_class').toggle("slow");
-
-});
+$('.header').sticky({
+  getWidthFrom: '.container',
+  responsiveWidth: true
 });
 
-/* Hide/show toggle as page viewport is resized */
-
-$(window).resize(function(){
-	if(window.innerWidth >= 750) {
-		$(".main-nav ul li").show();
-    $('#toggle_class').hide();
-    $('#toggle').hide();
-      $('.icon').hide();
-    $('#emptyDiv').hide();
-    $('.title').hide();
-    $('#firebugNav').show();
-	}
+$('.header').on('sticky-start', function () {
+  $('.description').html('We make <strong>music</strong> ');
 });
 
-$(window).resize(function(){
-	if(window.innerWidth < 768) {
-     $('#toggle_class').show();
-		 $('#toggle').show();
-     $('.main-nav ul li').hide();//hide nav in mobile view on re-size back to mobile
-     $('#emptyDiv').show();
-     $('.title').show();
-    $('#firebugNav').hide();
-  }
+$('.header').on('sticky-end', function () {
+  $('.description').html('We make music');
 });
 
-/*hide #tour_table until shows are booked, then unhide*/
-
-$(document).ready(function(){
-  $("#tour_table").hide();
+$('.work').sticky({
+  topSpacing: 60,
+  getWidthFrom: '.container',
+  responsiveWidth: true
+});
+$('.work').on('sticky-start', function() {
+  $(this).append(' <a href="mailto:email@website.com" class="email-text">Email&nbsp;us</a>');
+});
+$('.work').on('sticky-end', function() {
+    $('.email-text').remove();
 });
