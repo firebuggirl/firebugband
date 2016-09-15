@@ -1,0 +1,63 @@
+/* Footer styles */
+footer{
+  @include fixed_footer_nav;
+  background-color: rgba(45, 43, 46, 0.8);
+
+}
+
+footer ul{
+  @include flex;
+  justify-content: center;
+  @include footer_ul;
+}
+
+
+a.social {
+  display: inline-block;
+  text-indent: -9999px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  opacity: .7;
+  transition: all .5s;
+}
+
+
+
+
+a.social:hover {
+  opacity: 1;
+
+}
+/*.clearfix {
+  clear: both;
+}*/
+a.twitter{
+  background-image: url(../img/twitter.svg) ;
+
+}
+a.youtube{
+ background-image:  url(../img/youtube3.svg);
+}
+a.facebook {
+  background-image: url(../img/facebook-square.svg) ;
+
+
+}
+a.linkedIn{
+  background-image: url(../img/linkedin.svg);
+
+}
+
+/*a.spotify{
+  background-image: url(../img/spotify-32copy.png);
+
+
+}*/
+
+a.soundcloud{
+  background-image: url(../img/soundcloud.svg)
+}
+.copyright{
+  text-align: center;
+}

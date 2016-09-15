@@ -1,0 +1,151 @@
+/* Survey page styles */
+
+.photo{
+  /*width: 60%;*/
+  /*padding: 10px;*/
+}
+
+form {
+  margin: 0 auto;
+  text-align: left;
+  display: inline-block;
+}
+legend{
+  font-size: $font-size__h5;
+}
+.container{
+  text-align: center;
+  margin-top: em(30px);
+}
+.newsletter{
+  text-align: left;
+
+}
+
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+#albums:focus,
+textarea:focus {
+  border: 6px solid #5d2422;
+  transition: all .4s ease-in-out;
+  background-color: #C0C0C0; }
+
+  input[type="text"], input[type="email"], select, textarea, button {
+	border-radius: 3%;
+	outline: 0;
+  width: 100%;
+	padding: 5px;
+  color: $red;
+  font-weight: $font-weight--ultra-bold;
+	/*width: calc(100% - 10%);*/
+	background-color: #ECDDBE;
+	border: 4px solid #525564;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/*margin-left: 5%;*/
+}
+
+input::-moz-placeholder {
+  text-align: right;
+  /*font-style: italic;*/
+  font-weight: 700;
+  color: $red;
+  @include bp(largescreen){
+    text-align: right;
+  }
+}
+::-webkit-input-placeholder {
+  /*font-style: italic;*/
+  font-weight: 700;
+  color: $red;
+  @include bp(largescreen){
+    text-align: right;
+  }
+}
+
+input[type="radio"]{
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  width: em(25px);
+  height: em(25px);
+  border:5px solid $mustard;
+  background-color: $sage;
+  border-radius:50%;
+  outline:none;
+  /*box-shadow: 0 0 15px 0px $red inset;
+  -moz-box-shadow: 0 0 5px 5px $red inset;
+  -webkit-box-shadow: 0 0 5px 5px $red inset;*/
+  @include bp(tablet){
+    width: em(20px);
+    height: em(20px);
+  }
+
+}
+
+/*input[type='radio']:active{
+  color: $mustard;
+  background-color: $red;
+}*/
+
+
+input[type=radio]:checked {
+  border: 5px solid $red;
+}
+
+
+
+/* name label */
+#newsletter > p:nth-child(2) > label:nth-child(1){
+  @include bp(tablet){
+  margin-right: em(50px);
+}
+}
+
+/* email label */
+#newsletter > p:nth-child(3) > label:nth-child(1){
+  @include bp(tablet){
+  margin-right: em(58px);
+}
+}
+
+/* validate email label */
+#newsletter > p:nth-child(4) > label:nth-child(1){
+  @include bp(tablet){
+    margin-right: em(3px);
+  }
+}
+
+button{
+  width: 40%;
+  margin-left: 25%;
+  @include bp(tablet){
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
+#favMember {
+  @include flex;
+  @include flex_column;
+  @include flex_justify_center;
+  @include flex_align_items--center;
+  font-size: $font-size__h2;
+	@include bp(tablet){
+    @include flex_row;
+    @include flex_justify_space_between;
+    font-size: $font-size__h5;
+  }
+}
+
+.hideLabel{
+  display: none;
+}
+
+
+select {
+  color: #a8423d;
+  height: 52px;
+}

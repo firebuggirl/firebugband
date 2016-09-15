@@ -1,3 +1,5 @@
+
+
 //hide arrows on page load
 $(document).ready(function () {
     $(".arrows").hide();//hide arrows div on page load
@@ -69,11 +71,7 @@ $("#imageGallery a").click(function (event) {
     $(".arrows").show();
 
     //Hide fixed scroll bar with z-index that was previously getting in the way of te close button
-    //$("#top").hide();
-
-    $('#toggle-view').hide();
-
-    $('footer').hide();
+    $("#top").hide();
 
     $("#leftArrow").show();//show leftArrow in overlay
 
@@ -87,18 +85,28 @@ $("#imageGallery a").click(function (event) {
 
 //When close button is clicked hide the overlay and arrows, re-introduce search box and remove video
 
-var $closeLightbox = $("<div id='closeLightbox'></div>");//create div for close button and style in css
+//var $closeLightbox = $("<div id='closeLightbox'></div>");//create div for close button and style in css
 
-$image.before($closeLightbox);//tell DOM where close button fits in the DOM sturcture of the overlay
+//$image.before($closeLightbox);//tell DOM where close button fits in the DOM sturcture of the overlay
 
-$("#closeLightbox").click(function () {
+//$("#closeLightbox").click(function () {
+
+//    $overlay.hide();//close the overlay
+
+//    $("#top").show();//bring back search bar when overlay is hidden
+
+   //hide arrows
+//    $(".arrows").hide();
+
+  //remove video when overlay is hidden
+//    $overlay.remove('.video');
+//});
+$overlay.click(function () {
 
     $overlay.hide();//close the overlay
 
-    //$("#top").show();//bring back search bar when overlay is hidden
-$('#toggle-view').show();
-// Bring back footer
-$('footer').show();
+  //  $("#top").show();//bring back search bar when overlay is hidden
+
    //hide arrows
     $(".arrows").hide();
 

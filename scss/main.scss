@@ -1,0 +1,24 @@
+//reset
+@import "normalize/index";
+
+
+// Extends, Mixins, and variables-import before rest of folders and partials
+@import "components/index";
+
+
+// Main Styles and Layout
+@import "base/index";
+
+
+
+
+// SVG fills, keyframes, transforms, and effects
+
+@import "effects/index";
+
+
+
+
+//Media queries
+
+@import "media/index";

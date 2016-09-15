@@ -1,0 +1,42 @@
+%centered {
+	text-align: center;
+}
+
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Flexbox
+
+%flex{
+  display: flex;
+  -moz-display: flex;
+}
+
+%flex_row{
+	flex-direction: row;
+  -webkit-flex-direction: row;
+}
+%flex_column{
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+%flex_space_between{
+	justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+%flex_align_items_center{
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+
+%font_garamond{
+        font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+}

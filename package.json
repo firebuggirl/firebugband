@@ -1,0 +1,11 @@
+{
+  "name": "project8accessibility",
+  "version": "1.0.0",
+  "description": "Turn website into an accessible site for everyone on the web, regardless of physial or hardware differences and make site faster for downloading + easier parsing for search engines-",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juliette Tworsey",
+  "license": "ISC"
+}

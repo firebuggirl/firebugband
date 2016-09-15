@@ -1,0 +1,64 @@
+
+/*html {
+    box-sizing: border-box;
+    height: 100%;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #ededed;
+    font-family: 'Montserrat', Arial, sans-serif;
+}*/
+
+
+
+#preloader {
+    position: fixed;
+    display: table;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $off-black;
+    color: #FFF;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+
+
+#preloader--logo {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    padding: 50px;
+    border-radius: 50%;
+    background-color: #FFF;
+    -webkit-animation:spin .9s ease-out 3 .1s;
+    -moz-animation:spin .9s ease-out 3 .1s;
+    animation:spin .9s ease-out 3 .1s;
+}
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+}
+@keyframes spin {
+    100% { -webkit-transform: rotate(360deg);
+    transform:rotate(360deg); }
+}
+
+#logo--svg{
+  height: em(180px);
+  width: em(220px);
+  margin-top: -20px;
+}

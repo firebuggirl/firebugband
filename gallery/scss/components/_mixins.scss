@@ -1,0 +1,358 @@
+@mixin border_box{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin link_hover{
+    color: lighten($red, 15%);
+
+}
+
+@mixin link_hover2{
+  color: lighten($red, 15%);
+}
+
+@mixin img_border{
+    border: 5px solid $red;
+}
+
+//media queries
+
+@mixin bp($point) {
+  @if $point == tablet {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == fullscreen {
+    @media (min-width: 1024px) { @content; }
+  }
+  @else if $point == large_screen {
+    @media (min-width: 1280px) { @content; }
+  }
+  @else if $point == mobile_large{
+    @media (min-width: 414px) { @content;}
+  }
+  @else if $point == mobile_xLarge{
+    @media (min-width: 435px) { @content;}
+  }
+  @else if $point == mobile {
+    @media (min-width: 360px) { @content; }
+    }
+  @else if $point == mobile_small {
+    @media (min-width: 320px) { @content; }
+    }
+}
+
+// Flexbox
+
+@mixin flex{
+  display:flex;
+  -moz-display: flex;
+}
+
+@mixin flex_row{
+  flex-direction: row;
+  -webkit-flex-direction: row;
+}
+
+@mixin flex_row_reverse{
+  flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+}
+
+@mixin flex_column{
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+@mixin flex_wrap{
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+@mixin flex_justify_center{
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+
+@mixin flex_basis_100{
+  flex-basis: 100%;
+  -webkit-flex-basis: 100%;
+}
+@mixin flex_basis_60{
+  flex-basis: 60%;
+  -webkit-flex-basis: 60%;
+}
+
+@mixin flex_basis_50{
+  flex-basis: 50%;
+  -webkit-flex-basis: 50%;
+}
+
+@mixin flex_justify_space_around{
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+}
+
+@mixin flex_justify_space_between{
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+@mixin flex_justify_end{
+  justify-content: flex-end;
+  -moz-justify-content: flex-end;
+}
+
+@mixin flex_justify_start{
+  justify-content: flex-start;
+  -moz-justify-content: flex-start;
+}
+
+@mixin flex_align_start{
+  align-self: flex-start;
+  -moz-align-self: flex-start;
+}
+
+@mixin flex_align_center{
+  align-self: center;
+  -moz-align-self: center;
+}
+
+@mixin flex_align_items--center{
+  align-items: center;
+  -moz-align-items: center;
+}
+
+// Web Fonts
+
+/*
+ To later include font-face mixin:
+
+ @include font-face('abolition-regular', abolition-regular);
+
+*/
+@mixin font-face($family, $file){
+  @font-face {
+  font-family: $family;
+  src: url('#{$path-font}/#{$file}-webfont.eot');/*Use interpolatiion when variable is a string. Font and file paths are defined in fontfamily.scss*/
+  src: url('#{$path-font}/#{$file}-webfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$path-font}/#{$file}-webfont.woff') format('woff'),
+       url('#{$path-font}/#{$file}-webfont.ttf') format('truetype');
+}
+
+}
+
+/*
+ To later include text mixin:
+
+ @include text(1em, 1.5, $color:$color-text-base); Note: because of "NULL" can skip over values
+
+*/
+
+@mixin text($size, $l-height:null, $weight:null, $color:null){
+  font-size: $size;
+  line-height: $l-height;
+  font-weight: $weight;
+  color: $color;
+}
+
+// Each directive to create classes for each key in our colors map (in _colors.scss partial)
+/* To include, create .btn selector in _bass.scss .btn{@include bg-colors($ui-colors);}  */
+@mixin bg-colors($map) {
+	@each $theme, $color in $map {
+		&--#{$theme} {
+			background-color: $color;
+		}
+	}
+}
+
+/* Top down grey to white color gradient */
+@mixin gradient_grey_top{
+ -webkit-background: linear-gradient($lightergrey, transparent 7%),
+ linear-gradient(90deg, $lightergrey, transparent),
+ #fff;
+ background: linear-gradient($lightergrey, transparent 7%),
+ linear-gradient(0deg, $lightergrey, transparent),
+  #fff;
+}
+
+/* left to right grey to white color gradient */
+@mixin grey_ltr{
+  background-color: palette(grey, xx-light);
+    background-image:
+      linear-gradient(
+        to right,
+        $lightgrey,
+        palette(grey, xx-light) 20%
+      );
+}
+
+// Transform effect
+@mixin transform_1{
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+   transform: scale3d(1.1, 1.1, 1.1);
+}
+
+@mixin animation_spin{
+    animation: turn 1.1s .2s ease-out forwards;
+}
+
+//Transition effect
+// Ex include:   @include transition(all .5s ease);
+@mixin transition($trans...) {
+  -webkit-transition: $trans;
+  -moz-transition: $trans;
+  -ms-transition: $trans;
+  -o-transition: $trans;
+  transition: $trans;
+}
+
+@mixin mobile_right_toggle{
+  right: 0;
+  top: 0;
+  height: 48px;
+  width: 48px;
+  position: absolute;
+}
+@mixin wrapper_90{
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+@mixin wrapper--90_padding{
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 10px 20px;
+}
+@mixin wrapper_95{
+  max-width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+@mixin fixed_header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+@mixin fixed_header2{
+  width: 100%;
+  min-height: 30px;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+}
+@mixin fixed_footer_nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 5%;
+  padding-right: 5%;
+  z-index: 10;
+}
+
+@mixin footer {
+  width: 100%;
+  min-height: 30px;
+  padding: 20px 0 40px 20px;
+}
+
+@mixin footer_ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Video control styles */
+
+@mixin play-pause{
+  border:none;
+	width:28px;
+	height:28px;
+	cursor:pointer;
+	opacity:0.7;
+  background-color: transparent;
+  margin-right: 60px;
+}
+
+@mixin stop{
+  border:none;
+	width:34px;
+	height:28px;
+	cursor:pointer;
+	opacity:0.7;
+  background-color: transparent;
+}
+
+@mixin cc{
+  border:none;
+	width:26px;
+	height:28px;
+	cursor:pointer;
+	opacity:0.7;
+  background-color: transparent;
+}
+
+@mixin mutebtn{
+  border:none;
+	width:26px;
+	height:28px;
+	cursor:pointer;
+	opacity:0.7;
+  background-color: transparent;
+}
+
+@mixin input--type_range{
+  -webkit-appearance: none !important; /* Hides the slider so that custom slider can be made */
+  background: transparent; /* Otherwise white in Chrome */
+
+}
+
+@mixin input--type_range--webkit--thumb{
+  -webkit-appearance: none !important;
+  height:15px;
+  width:15px;
+  border-radius:100%;
+  cursor:pointer;
+}
+
+@mixin input--type_range--moz--thumb{
+  height:15px;
+  width:15px;
+  border-radius:100%;
+  cursor:pointer;
+}
+
+@mixin input--type_range--ms{
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+@mixin progressBar{
+  position: absolute;
+	width: 0;
+  height: 10px;
+}
+
+@mixin bufferBar{
+  position: relative;
+  width: 0;
+  height: 10px;
+}
+
+@mixin video--center{
+  margin: 0 auto;
+  display: block;
+  height: 100%;
+  width: 100%;
+}

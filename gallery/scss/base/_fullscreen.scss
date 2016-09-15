@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.arrows {
+	width: 100%;
+	z-index: 60;
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+  position: fixed;
+  /*background: url(images/left-arrow.png) left 48% no-repeat;
+  background: url(images/right-arrow.png) right 48% no-repeat;*/
+  margin-top: calc(23% + 30px);
+}
+
+#leftArrow{
+  margin-left: -10%;
+  background-color: $beige;
+  border-radius: 50%;
+   &:hover{
+     transform: scale(1.2);
+     background-color: #FCAD0D;
+   }
+}
+
+#rightArrow{
+  margin-right: -10%;
+  background-color: $beige;
+  border-radius: 50%;
+    &:hover{
+      transform: scale(1.2);
+      background-color: #FCAD0D;
+    }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  /*color: #222;*/
+  background: $charcoal;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*input[type="search"]{
+  border: 3px solid grey;
+  width: 460px;
+  height: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 16pt;
+  color:$rose;
+
+}
+
+input[type="search"]:focus{
+  border: 8px solid;
+  color: darken($rose, 30%);
+  border-color: lighten($rose, 20%);
+  background-color: $lightergrey;
+
+}*/
+
+
+
+/* Link Styles */
+
+/*a {
+  text-decoration: none;
+  color: #E73931;
+}
+a:hover {
+  color: #F7C059;
+}*/
+/*gallery styles*/
+
+
+#imageGallery {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	max-width: 1040px;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#imageGallery .layout {
+	display: inline-block;
+	margin: 10px ;
+}
+#imageGallery .layout img {
+  border: 3px solid white;
+  margin-bottom: 30px;
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+
+}
+#imageGallery .layout img:hover{
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+  z-index: 10 /*so top row does not get cut off by #top div*/
+
+}
+
+#firebug{
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+    &:hover{
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+}
+
+
+
+
+#closeLightbox {
+	right: 0;
+	top: 0;
+	background: url(images/close.png) right 48% no-repeat;
+	content: "";
+	height: 100px;
+	width: 500px;
+	position: absolute;
+	margin-right: 40px;
+}
+
+
+a {
+	text-decoration: none;
+}
+h1{
+	color: beige;
+	font-family: Poller One;
+}
+#overlay {
+  background:rgba(0,0,0,0.7);
+  width:100%;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  display:none;
+  text-align:center;
+}
+
+#overlay img{
+/* width: 50%;*/
+ border: 3px solid $beige;
+ margin-top: calc(10% + 30px);
+
+}
+ #overlay img:hover{
+   border-color: #FCAD0D;
+ }
+
+.video {
+ border: 3px solid white;
+ margin-top: calc(10% + 30px);
+ width: 730px;
+ height: 515px;
+   &:hover{
+   border: 3px solid $mustard;
+ }
+
+}
+
+@media (orientation: landscape) {
+	/* if landscape, make sure the height is adjusted */
+
+	#overlay img {
+		height: 68vh;
+	}
+
+	/*.video {
+		width: 65vw;
+    	height: 36.5625vw;
+	}*/
+}
+
+@media (orientation: portrait) {
+	/* if portrait, make sure the width is adjusted */
+
+	#overlay img {
+		width: 50vw;
+		height: auto;
+	}
+
+	/*.video {
+		width: 60vw;
+	  	height: 56.25vw;
+	}*/
+}
+
+
+#overlay p {
+ color: $beige;
+ width: 30%;
+ margin: 15px auto;
+ font-family: overlock;
+
+}
+
+.galleryDiv{
+  text-align: center;
+  flex: 1;
+  background-size: cover;
+  overflow: hidden;
+  padding-top: 20px;
+  margin-top: 100px;
+  margin-bottom: 120px;
+}
+.hidden{
+  display: none;
+}
+
+.mediaquery{
+  margin: 0 auto;
+  display: block;
+
+}
